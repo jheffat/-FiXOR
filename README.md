@@ -23,6 +23,7 @@ NOTE: FIXOR 1.0 no longer supported but still here for python learners.
 
 
 ------USAGE:
+
 Fixor OPTION TARGET | PASSWORD
 
 TARGET---> Path\Filename\*.*
