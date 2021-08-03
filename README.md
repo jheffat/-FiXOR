@@ -6,6 +6,7 @@
 #FiXOR
 is a file encryptor that allows it not to be readable by human or by a specific program, it is based on command line interface. It is available in binary for Windows, MacOX and Linux. It can also be used as a script (for efficient operation make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt)
 
+For Binary download go to http://icodexys.com
 
 The encryption and decryption process did not use modules available in python but the XOR operator (^ in python).
 
