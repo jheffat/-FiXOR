@@ -8,8 +8,6 @@ is a file encryptor that allows it not to be readable by human or by a specific 
 
 For Binary download go to http://icodexys.com
 
-The encryption and decryption process did not use modules available in python but the XOR operator (^ in python).
-
 Fixor 2.11 has new improvements, one of them is:
 
 1-Passwords are no longer encrypted and not saved for security reasons, only uses avanced Password hashing algorithm.
