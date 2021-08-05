@@ -46,19 +46,21 @@ fixor -d  *.* -p G0dl!k334#
 -----Screenshots
 
 *encryption
+Ex: fixor -e *.mp3 -p D0y0ul0v3m3?
 ![encrypt](https://user-images.githubusercontent.com/18588201/127971916-15df22f8-7d7f-47e2-85d3-d3f7a126dcb9.jpg)
 
 
 *scanning files encrypted
+Ex: fixor -s *.mp3
 ![scanned](https://user-images.githubusercontent.com/18588201/127971964-467490ac-1ce1-454e-bfa1-6d9d504bbc75.jpg)
 
 
 *List of files encrypted to be decrypted
-
+Ex: fixor -d *.mp3 -p D0y0ul0v3m3?
 ![tarlisttodecry](https://user-images.githubusercontent.com/18588201/127972065-6f2f6958-fb1e-4430-bb18-1c8bd977184d.jpg)
 
 
-*decryption
+*during the decryption
 ![decryp](https://user-images.githubusercontent.com/18588201/127972115-140c8f99-3f15-4fb5-a189-3510596bfe32.jpg)
 
 
