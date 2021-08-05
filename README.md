@@ -4,7 +4,7 @@
 
 
 #FiXOR
-is a file encryptor that allows it not to be readable by human or by a specific program, it is based on command line interface. It is available in binary for Windows, MacOX and Linux. It can also be used as a script (for efficient operation make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7....For Windows users I recommend to install Windows Terminal from Microsoft store, it has UNICODE supported.
+is a file encryptor that allows it not to be readable by human or by a specific program, it is based on command line interface CLI. It is available in binary for Windows, MacOX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7....For Windows users I recommend to install Windows Terminal from Microsoft store, it has UNICODE supported.
 
 For Binary download go to http://icodexys.com
 
@@ -12,9 +12,9 @@ The encryption and decryption process did not use modules available in python bu
 
 Fixor 2.11 has new improvements, one of them is:
 
-1-Passwords are no longer encrypted and saved for security reasons, only use avanced hashing algorithm for passwords.
+1-Passwords are no longer encrypted and not saved for security reasons, only uses avanced Password hashing algorithm.
 
-2-It also contains the verification of data integrity using the sha256 hash algorithm, with it we can ensure that the file has been successfully decrypted.
+2-It also contains the verification of data integrity using the sha256 hash algorithm, with it we can ensure that the file has been successfully decrypted or not.
 
 3-You can make the encryption or decryption process even faster.
 
