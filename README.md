@@ -31,8 +31,16 @@
 > `fixor -d c:\my downloads\handrew.jpg`
 >
 > `fixor -e *.exe`
->
+> 
 > `fixor -d *.* -p G0dl!k334#`
+> 
+### Linux/Macosx users Attention!!!!, the wildcards or target must have " " or  ' ' !!! 
+> 
+> `fixor -e "*.exe"`
+> 
+> `fixor -e "mydiary.txt"`
+> 
+> `fixor -d "*.*" -p G0dl!k334#`
 
 ## -----Screenshots from Windows platform
 
