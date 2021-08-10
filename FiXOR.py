@@ -239,7 +239,8 @@ if optionx=="-e":
                 emoj="😱";banfilels+=[xc]
             print("|FILE:["+emoj+ "📄 "+path.basename(xc)+"] "+filemsg)
         except IOError as errz:
-            print(f"[🚫{errz}\n")
+            print(f"[🚫{errz}, removed from the target's list...\n")
+            banfilels+=[xc]
     for xc in banfilels:
         targets.remove(xc)
     if len(targets)==0:exit("***process canceled, no files to encrypt***")
@@ -409,7 +410,8 @@ if optionx=="-d":
                 emoj="😱";banfilels+=[xc]     
             print("|FILE:["+emoj+ "📄 "+path.basename(xc)+"] "+filemsg)
         except IOError as errz:
-            print(f"[🚫{errz}\n")
+            print(f"[🚫{errz}, removed from the target's list...\n")
+            banfilels+=[xc]
     for xc in banfilels:
         targets.remove(xc) 
     if len(targets)==0:exit("***process canceled, no files to decrypt***") 
