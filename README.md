@@ -34,7 +34,7 @@
 >
 > `fixor -d *.* -p G0dl!k334#`
 
-## -----Screenshots
+## -----Screenshots from Windows platform
 
 #### *encryption*
 
