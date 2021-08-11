@@ -34,13 +34,16 @@
 > 
 > `fixor -d *.* -p G0dl!k334#`
 > 
-### Linux/Macosx users Attention!!!!, the wildcards or target must have " " or  ' ' !!! 
+### Linux/Macosx users Attention!!!!, in orde to use fixor:
+>  
+>  - The wildcards or target must have " " or  ' '
+>  - Need to be root user or use SUDO
 > 
-> `fixor -e "*.exe"`
+> `sudo fixor -e "*.exe"`
 > 
-> `fixor -e "mydiary.txt"`
+> `sudo fixor -e "mydiary.txt"`
 > 
-> `fixor -d "*.*" -p G0dl!k334#`
+> `sudo fixor -d "*.*" -p G0dl!k334#`
 
 ## -----Screenshots from Windows platform
 
