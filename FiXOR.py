@@ -1,7 +1,7 @@
 #  -*- coding: utf-8 -*-
 from shutil import copy2
 from string import ascii_letters,digits
-from os import system,path
+from os import system,path #,getuid #<---Only for Linux/MacOSX
 from  hashlib import sha256
 from tqdm import tqdm
 import glob, platform,re,keyboard, bcrypt
@@ -151,7 +151,6 @@ def warning():
         _ = system("clear")  
     print(""" __    __                 _               _ 
 / / /\ \ \__ _ _ __ _ __ (_)_ __   __ _  / \
-
 \ \/  \/ / _` | '__| '_ \| | '_ \ / _` |/  /
  \  /\  / (_| | |  | | | | | | | | (_| /\_/
   \/  \/ \__,_|_|  |_| |_|_|_| |_|\__, \/ 
@@ -188,6 +187,11 @@ def helpscr():
     exit("\nExit...\n")
 Password="";n=0;targets=[];op="";banfilels=[];sucessed=[];notsucessed=[] ;lensuc=0  ;decryptdata=bytearray();encryptdata=bytearray();statuspass="";state=False ;X_integrity=0;N_integrity=0      ;esc=0 ;posbyte=0                       
 timeprocess="";rootprocess=""
+#191 - 194 only for linux/MacOSX
+#if getuid()>0:
+#    print("--Permission denied--: Only ROOT users or use 'sudo' before")
+#    sleep(4)
+#    exit()
 if len(argv)<=2:
     intro()
     helpscr()
