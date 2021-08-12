@@ -33,9 +33,7 @@
 > 
 > `fixor -d *.* -p G0dl!k334#`
 > 
->  ![icon](https://user-images.githubusercontent.com/18588201/128962463-2cdac61e-2a66-41e9-9b1e-aeada84d443a.png)
 >  Linux/Macosx users Attention!!!!, in orde to use fixor:
-
 >  - The wildcards or target must have " " or  ' '
 >  - Need to be root user or use SUDO
 > 
