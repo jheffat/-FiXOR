@@ -1,4 +1,3 @@
-[![intro](https://user-images.githubusercontent.com/18588201/127971655-56263ef3-140c-4e82-93e4-ee1f7940e0f8.jpg)](https://user-images.githubusercontent.com/18588201/127971655-56263ef3-140c-4e82-93e4-ee1f7940e0f8.jpg)
 
 # FiXOR 
 
