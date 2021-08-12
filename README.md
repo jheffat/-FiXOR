@@ -2,7 +2,7 @@
 
 # FiXOR 
 
-> It is a file encryptor that does not allow it to be read by humans or by a specific program, it is based on command line interface CLI. It is available in binary for Windows, MacOSX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7, so you should have that version or higher....For Windows users I recommend to install **Windows Terminal** from Microsoft store, supports UNICODE perfect.
+> Is a file encryptor based on command line interface CLI. It is available in binary for Windows, MacOSX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7, so you should have that version or higher....For Windows users I recommend to install **Windows Terminal** from Microsoft store, it supports UNICODE.
 
 **For Binary download go to** [http://icodexys.com](http://icodexys.com/)
 
