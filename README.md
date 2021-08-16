@@ -36,9 +36,7 @@
 >
 >   * Linux/MacOSX  platform:
 >
->     ​    -The wildcards or target must have " " or ' '
->
->     ​	-Need to be root user or use SUDO
+>     -->The wildcards or target must have " " or ' '. Needs to be root user or use SUDO
 >
 >   ```bash
 >   sudo fixor -e "*.exe"
