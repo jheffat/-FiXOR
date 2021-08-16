@@ -6,7 +6,7 @@
 
 > Fixor 2.11 has new improvements, one of them is:
 >
-> - Passwords are no longer encrypted and not saved for security reasons, only uses advanced Password hashing algorithm.
+> - Passwords are no longer encrypted and stored for security reasons, only uses advanced Password hashing algorithm.
 > - It also contains the verification of data integrity using the sha256 hash algorithm, with it we can ensure that the file has been successfully decrypted or not.
 > - You can make the encryption or decryption process even faster.
 
@@ -56,17 +56,15 @@
 >   python fixor.py -e mydiary.txt
 >   python fixor.py -d *.* -p G0dl!k334#
 >   ```
->
 >   
->
 >   * Linux/MacOSX platform:					
->
+>   
 >   ```bash
 >   sudo python fixor.py -e  "*.exe"
 >   sudo python fixor.py -e  "mydiary.txt"
 >   sudo python fixor.py -d  "*.*" -p G0dl!k334#
 >   ```
->
+>   
 >   
 >
 > 
