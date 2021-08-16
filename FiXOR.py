@@ -58,12 +58,15 @@ def genpass():
     return PasswordGen
 def report(mode,succ,notsuc):
     global timeprocess, rootprocess
+    lenRp=len(rootprocess)
     if mode=="1":
         termwrd=["Encryption","ENCRYPTED", "ENCRYPT"]
     else:
         termwrd=["Decryption","DECRYPTED", "DECRYPT"]
-
-    l=open(rootprocess+"/"+termwrd[0] + ".log","a")
+    if lenRp>0:
+        #if running linux  swap '//' to '\'------------------------------------------
+        if rootprocess[lenRp-1]!="\\":rootprocess=rootprocess+"\\"
+    l=open(rootprocess+termwrd[0] + ".log","a")
     l.write("***FILES "+termwrd[1]+" ON "+str(date.today())+" TIME:"+str(timeprocess)+"\n")
     l.write("***ROOT: "+rootprocess+"\n")
     for f in succ:
@@ -149,16 +152,16 @@ def warning():
         _ = system("cls")
     else:
         _ = system("clear")  
-    print(""" __    __                 _               _ 
-/ / /\ \ \__ _ _ __ _ __ (_)_ __   __ _  / \
-\ \/  \/ / _` | '__| '_ \| | '_ \ / _` |/  /
- \  /\  / (_| | |  | | | | | | | | (_| /\_/
-  \/  \/ \__,_|_|  |_| |_|_|_| |_|\__, \/ 
-                                  |___/""")
+    print("""##      ##    ###    ########  ##    ## #### ##    ##  ######   
+##  ##  ##   ## ##   ##     ## ###   ##  ##  ###   ## ##    ##  
+##  ##  ##  ##   ##  ##     ## ####  ##  ##  ####  ## ##        
+##  ##  ## ##     ## ########  ## ## ##  ##  ## ## ## ##   #### 
+##  ##  ## ######### ##   ##   ##  ####  ##  ##  #### ##    ##  
+##  ##  ## ##     ## ##    ##  ##   ###  ##  ##   ### ##    ##  
+ ###  ###  ##     ## ##     ## ##    ## #### ##    ##  ######   """)
     print("_"*80,"|")
     print("\n|☢️| Please follow the rules & consequences of this action:")
     print("*--->Forgetting your password means that you will lose your encrypted data forever.... ")
-    print("*--->During encryption, you can CANCEL the process and it will not affect files that have not reached 100%")
     print("*--->Any Password that you type or generate, make sure to write it down...Press [P] to show it.") 
     print("*--->Any action encrypt/decrypt a file, will generate a file log 'encryption.log' / 'decryption.log'....")
     print("*--->FiXOR is capable to detect if a file is encrypted or not...")
@@ -177,8 +180,8 @@ def helpscr():
     print("\n|File Encryptor tools.\n")
     print("USAGE: Fixor OPTION TARGET | PASSWORD")
     print("TARGET---> Path\Filename\*.*")
-    print("OPTION---> -e to encrypt, -d to decrypt and -s for file details")
-    print("PASSWORD---> -p specify a quick password to encrypt/decrypt [OPTIONAL]\n")
+    print("OPTION---> -e to encrypt, -d to decrypt and -s to scan encrypted files")
+    print("PASSWORD---> -p specify a QUICK password to encrypt/decrypt [OPTIONAL]\n")
     print("Example: fixor -e mydiary.txt")
     print("fixor -d c:\my downloads\handrew.jpg")
     print("fixor -e *.exe")
@@ -186,7 +189,7 @@ def helpscr():
     sleep(2)
     exit("\nExit...\n")
 Password="";n=0;targets=[];op="";banfilels=[];sucessed=[];notsucessed=[] ;lensuc=0  ;decryptdata=bytearray();encryptdata=bytearray();statuspass="";state=False ;X_integrity=0;N_integrity=0      ;esc=0 ;posbyte=0                       
-timeprocess="";rootprocess=""
+timeprocess="";rootprocess="";k=""
 #191 - 194 only for linux/MacOSX
 #if getuid()>0:
 #    print("--Permission denied--: Only ROOT users or use 'sudo' before")
@@ -208,7 +211,7 @@ optionx=argv[1]
 
 if optionx=="-s":
     intro()  
-    print("\n║FILES ENCRYPTED DETAILS╠"+"═"*100+"╣\n")
+    print("\n║ENCRYPTED FILES DETAILS╠"+"═"*100+"╣\n")
     for xc in targets:
         try:
             if filesize(xc)>50:
@@ -317,12 +320,14 @@ Terminated...""")
                 else:     
                     ldata=(Fsize)
                     fragdata=Filehandle(Filename,posbyte,Fsize)
-                    Type_file="Plain Text"
+                    Type_file="Plain Text";fragbyte=1
             F_hashed=sha256(Filehandle(Filename,posbyte,int(Fsize*fragbyte))).hexdigest() 
-           
+
+
+            Metadatax=xor('{"tox":"!CDXY","file":"'+Fn_clear(path.basename(Filename))+'","posbytes":"'+str(posbyte)+'","tarbytes":"'+str(ldata)+'","date":"'+str(date.today())+'","pass":"'+Pass_hashed+'","integrity":"'+F_hashed+'","os":"'+platform.system()+'","size":"'+str(Fsize)+'"}')
             intro()
             print("\n║ENCRYPTION PROCESS╠"+"═"*80+"╣[CTRL+C] Cancel the Process ║")  
-            print("\n| Total Files Encrypted:",lensuc,"/",lentarg)
+            print("\n| Total Encrypted Files:",lensuc,"/",lentarg)
             print('\r[%s%s] ' % ('█' * int(lensuc*65/lentarg), '░'*(65-int(lensuc*65/lentarg))),  end='\n')
             print(f"\n| Target: 📝{path.basename(Filename)}")
             print(f"| Size: {byteme(str(Fsize))}  | Type: [{Type_file}]") 
@@ -335,21 +340,22 @@ Terminated...""")
                 n+=1   
                 if(n == lp):
                     n=0;
-            bar.close()        
+            bar.close() 
+               
             FTarget=open(Filename,"rb+")
             FTarget.seek(posbyte)
             FTarget.write(encryptdata)
             FTarget.seek(Fsize)
-            FTarget.write(bytes(list(map(ord,xor('{"tox":"!CDXY","file":"'+Fn_clear(path.basename(Filename))+'","posbytes":"'+str(posbyte)+'","tarbytes":"'+str(ldata)+'","date":"'+str(date.today())+'","pass":"'+Pass_hashed+'","integrity":"'+F_hashed+'","os":"'+platform.system()+'","size":"'+str(Fsize)+'"}')))))  
+            FTarget.write(bytes(list(map(ord,Metadatax)))) 
             FTarget.close
-            fragdata=b"";encryptdata=bytearray()
+            fragdata="";encryptdata=bytearray()
             sucessed+=[{"Filename":path.basename(Filename), "integrity":F_hashed}]
             lensuc=len(sucessed)
         except IOError as errz:
             print(f"\n[🚫{errz}")
             print("Press [ENTER] to Continue...")
             notsucessed+=[{"Filename":path.basename(Filename), "error":str(errz)}]
-            FTarget="";fragdata=b"";encryptdata=bytearray()
+            FTarget="";fragdata="";encryptdata=bytearray()
             keypress('enter')
         except KeyboardInterrupt as kk:
                 intro()
@@ -487,11 +493,11 @@ Terminated...""")
                     N_integrity+=1
                     print("✅")
                 else:
-                    X_integrity+=1
+                    X_integrity+=1;k=""
                     print("⛔")
                     print("☢️|CheckSum didn't match...")
-                    print("[I]gnore the warning, try to decrypt the file and keep the original.")
-                    print("[S]kip this file and continue to the next....")
+                    print("[I]gnore the warning, try to decrypt the file and keep an original copy.")
+                    print("[S]kip this file, do not decrypt it and continue to the next....")
                     while k!='I' and k!= 'S':
                         k=keyboard.read_key().upper()
                     if k=="S":
@@ -500,7 +506,7 @@ Terminated...""")
                         continue
                     elif k=="I":
                         print("Copying....Please wait")
-                        copy2(Filename,"CopyByFIXOR-"+Filename)
+                        copy2(Filename,Filename+"_F!X0R_Copy")
                 FTarget=open(Filename,"rb+")
                 FTarget.seek(BytesPosition)
                 FTarget.write(decryptdata)
@@ -547,7 +553,7 @@ Terminated...""")
     intro()
     if len(sucessed)>0: 
         print("\n|DONE DECRYPTING...😃\n")  
-        print(f"✔️Decrypted: {len(sucessed)} Files with %{int(100*(len(sucessed)/N_integrity))} Data verified!\n")
+        print(f"✔️Decrypted: {len(sucessed)} Files with %{int(100*(N_integrity/len(sucessed)))} Data verified!\n")
         if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to decrypt...\n")
         report("0",sucessed,notsucessed)
         print("Would you like to see the report now? Y / N:")
@@ -555,7 +561,7 @@ Terminated...""")
             if keyboard.is_pressed('n'): break
             if keyboard.is_pressed('y'): 
                 if len(sucessed)>0:
-                    print("***List decrypted\n")
+                    print("***Decrypted list\n")
                     for r in sucessed:
                         print(f"--File: {r['Filename']}    --CheckSum:",end="")
                         if r["integrity"]=='True': 
