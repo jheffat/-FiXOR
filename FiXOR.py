@@ -190,11 +190,11 @@ def helpscr():
     exit("\nExit...\n")
 Password="";n=0;targets=[];op="";banfilels=[];sucessed=[];notsucessed=[] ;lensuc=0  ;decryptdata=bytearray();encryptdata=bytearray();statuspass="";state=False ;X_integrity=0;N_integrity=0      ;esc=0 ;posbyte=0                       
 timeprocess="";rootprocess="";k=""
-#191 - 194 only for linux/MacOSX
-#if getuid()>0:
-#    print("--Permission denied--: Only ROOT users or use 'sudo' before")
-#    sleep(4)
-#    exit()
+if platform.system()!="Windows":
+    if getuid()>0:
+        print("--Permission denied--: Only ROOT users or use 'sudo' before")
+        sleep(4)
+        exit()
 if len(argv)<=2:
     intro()
     helpscr()
