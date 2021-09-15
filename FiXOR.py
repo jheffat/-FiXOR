@@ -192,7 +192,7 @@ Password="";n=0;targets=[];op="";banfilels=[];sucessed=[];notsucessed=[] ;lensuc
 timeprocess="";rootprocess="";k=""
 if platform.system()!="Windows":
     if getuid()>0:
-        print("--Permission denied--: Only ROOT users or use 'sudo' before")
+        print("--Permission denied--: Only ROOT users or use 'sudo' before. Ex: sudo fixor...")
         sleep(4)
         exit()
 if len(argv)<=2:
