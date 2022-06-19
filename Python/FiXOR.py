@@ -77,7 +77,7 @@ def report(mode,succ,notsuc):
         for f in notsuc:
             l.write("==>"+f["Filename"]+ " -Reason: "+f["error"]+"\n")
     l.close()
-    print("|📋 Check file " +termwrd[0]+".log to see more details....")
+    print("|📋 " +termwrd[0]+".log created....")
     return
 
 def keypress(key):
@@ -141,7 +141,7 @@ def intro():
   ______ ___   ______  _____        🌍: www.icodexys.com
  |  ____(_) \ / / __ \|  __ \       📧: iCodexys@gmail.com
  | |__   _ \ V / |  | | |__) |      🔨: Jheff Alberty
- |  __| | | > <| |  | |  _  /       📊: 2.11  (07/18/2021) 
+ |  __| | | > <| |  | |  _  /       📊: 2.50  (06/18/2022) 
  | |    | |/ . \ |__| | | \ \ 
  |_|    |_/_/ \_\____/|_|  \_\      GNU General Public License v3.0
  """ )                                                     
@@ -161,11 +161,11 @@ def warning():
  ###  ###  ##     ## ##     ## ##    ## #### ##    ##  ######   """)
     print("_"*80,"|")
     print("\n|☢️| Please follow the rules & consequences of this action:")
-    print("*--->Forgetting your password means that you will lose your encrypted data forever.... ")
+    print("*--->Forgetting your password means that you will lose your encrypted data.... ")
     print("*--->Any Password that you type or generate, make sure to write it down...Press [P] to show it.") 
     print("*--->Any action encrypt/decrypt a file, will generate a file log 'encryption.log' / 'decryption.log'....")
     print("*--->FiXOR is capable to detect if a file is encrypted or not...")
-    print("*--->Also is capable to check if the password is correct or not before touch the file.")
+    print("*--->Also is capable to check if the password is correct or not, before touching the file.")
     print("*--->By Pressing [ENTER] you are aware of your own responsibility of your data!")
     print("-"*80,"|\n")
     print
@@ -301,7 +301,7 @@ Terminated...""")
         try:
             Fsize=filesize(Filename);bitscv=byteme(str(Fsize))
             print(f"\n| Hashing File's integrity: {Filename.upper()} | Size: {bitscv}....")
-            if "GB" in bitscv:print(f"It may take longer")  
+            if "GB" in bitscv:print(f"It may take longer...")  
             
             fragbyte=isZipmp3rarother(Filename)
 
@@ -360,48 +360,43 @@ Terminated...""")
         except KeyboardInterrupt as kk:
                 intro()
                 print("\n|ENCRYPTION PROCESS CANCELED...🙄\n")
-                print("✔️Encrypted:",len(sucessed),"Files ")
+                print("|Result List:\n")
+                if len(sucessed)>0:
+                        print("***Encrypted\n")
+                        for r in sucessed:
+                             print(f"--File: {r['Filename']}   --CheckSum:{r['integrity']}")
+                if len(notsucessed)>0:
+                        print("***Failed to encrypt\n")
+                        for r in notsucessed:
+                            print(f"--File: {r['Filename']}  --Reason:{r['error']}")          
+                print("✔️",len(sucessed),"Files Encrypted ")
                 if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to encrypt...\n")
-                report("1",sucessed,notsucessed)
-                print("Would you like to see the report now? Y / N:")
-                while True:
-                    if keyboard.is_pressed('n'): break
-                    if keyboard.is_pressed('y'): 
-                        if len(sucessed)>0:
-                            print("***Encrypted List\n")
-                            for r in sucessed:
-                                print(f"--File: {r['Filename']}   --CheckSum:{r['integrity']}")
-                        if len(notsucessed)>0:
-                            print("***Failed to encrypt\n")
-                            for r in notsucessed:
-                                print(f"--File: {r['Filename']}  --Reason:{r['error']}")          
-                    exit("Done!")
-                exit("Done!")
+                report("1",sucessed,notsucessed)      
+                exit("Terminated...")
+                
     intro()        
     if len(sucessed)>0:
-        print("\n|DONE ENCRYPTING...😃\n")
-        print("✔️Encrypted:",len(sucessed),"Files ")
-        if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to encrypt...\n")
-        report("1",sucessed,notsucessed)
-        print("Would you like to see the report now? Y / N:")
-        while True:
-            if keyboard.is_pressed('n'): break
-            if keyboard.is_pressed('y'): 
-                if len(sucessed)>0:
-                    print("***Encrypted List\n")
-                    for r in sucessed:
-                        print(f"--File: {r['Filename']}   --CheckSum:{r['integrity']}")
+        print("\n|DONE ENCRYPTING...😃\n")  
+        print("|Result List:\n")    
+        if len(sucessed)>0:
+                print("***Encrypted List\n")
+                for r in sucessed:
+                    print(f"--File: {r['Filename']}   --CheckSum:{r['integrity']}")
                 if len(notsucessed)>0:
                     print("***Failed to encrypt\n")
                     for r in notsucessed:
                         print(f"--File: {r['Filename']}  --Reason:{r['error']}")          
-                exit("Done!")
+                
+        print("✔️ ",len(sucessed),"Files Encrypted \n")
+        if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to encrypt...\n")
+        report("1",sucessed,notsucessed)
         exit("Done!")
+    
     elif len(notsucessed)>0:
-         print("\n|DONE ENCRYPTING...😱\n")
+         print("\n|DONE ENCRYPTING BUT...😱\n")
          print(f"❌ {len(notsucessed)} Failed to encrypt...\n")
          report("1",sucessed,notsucessed)
-         exit("Done!")
+         exit("Terminated...")
 
 if optionx=="-d":
     intro()  
@@ -517,66 +512,57 @@ Terminated...""")
                 sucessed+=[{"Filename": path.basename(Filename),"integrity" : str(integrity)}]
                 lensuc=len(sucessed)
             except IOError as errz:
-                print(f"\n[🚫{errz}")
-                print("Press [ENTER] to Continue...")
-                keypress('enter')
                 notsucessed+=[{"Filename": path.basename(Filename),"error" : str(errz)}]
                 FTarget="";decryptdata=bytearray();fragdata=b""
             except KeyboardInterrupt as kk:
-                print("\n|DECRYPTION PROCESS CANCELED...🙄\n")
-                print(f"✔️Decrypted: {len(sucessed)} Files with %{int(100*(N_integrity/len(sucessed)))} Data verified!\n")
+                print("\n|DECRYPTION PROCESS CANCELED...🙄\n")            
+                print("|Result List:\n")     
+                if len(sucessed)>0:
+                        print("***Decrypted List\n")
+                        for r in sucessed:
+                            print(f"--File: {r['Filename']}    --CheckSum:",end="")
+                            if r["integrity"]=='True': 
+                                print("✅")
+                            elif r["integrity"]=='False':
+                                print("⛔")
+                if len(notsucessed)>0:
+                        print("***Failed to decrypt\n")
+                        for r in notsucessed:
+                            print(f"--File: {r['Filename']}  --Reason:{r['error']}")                         
+                print(f"✔️ {len(sucessed)} Files Decrypted with %{int(100*(N_integrity/len(sucessed)))} Data verified!\n")
                 if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to decrypt...\n")
                 report("0",sucessed,notsucessed)
-                print("Would you like to see the report now? Y / N:")
-                while True:
-                    if keyboard.is_pressed('n'): break
-                    if keyboard.is_pressed('y'): 
-                        if len(sucessed)>0:
-                            print("***Decrypted List\n")
-                            for r in sucessed:
-                                print(f"--File: {r['Filename']}    --CheckSum:",end="")
-                                if r["integrity"]=='True': 
-                                    print("✅")
-                                elif r["integrity"]=='False':
-                                    print("⛔")
-                        if len(notsucessed)>0:
-                            print("***Failed to decrypt\n")
-                            for r in notsucessed:
-                                print(f"--File: {r['Filename']}  --Reason:{r['error']}")          
-                        exit("Done!")
                 exit("Done!") 
         else:
-            print("❌Your password is invalid for this file:",path.basename(Filename))
-            print("Press [ENTER] to Continue...")
-            keypress('enter')
             notsucessed+=[{"Filename":path.basename( Filename),"error" : "Invalid password!"}]
     intro()
     if len(sucessed)>0: 
         print("\n|DONE DECRYPTING...😃\n")  
-        print(f"✔️Decrypted: {len(sucessed)} Files with %{int(100*(N_integrity/len(sucessed)))} Data verified!\n")
+        
+        print("|Result List:\n")
+        if len(sucessed)>0:
+                print("***Decrypted list\n")
+                for r in sucessed:
+                    print(f"--File: {r['Filename']}    --CheckSum:",end="")
+                    if r["integrity"]=='True': 
+                        print("✅")
+                    elif r["integrity"]=='False':
+                        print("⛔")
+        if len(notsucessed)>0:
+                print("***Failed to decrypt\n")
+                for r in notsucessed:
+                    print(f"--File: {r['Filename']}  --Reason:{r['error']}")  
+                            
+        print(f"✔️ {len(sucessed)} Files Decrypted with %{int(100*(N_integrity/len(sucessed)))} Data verified!\n")
         if len(notsucessed)>0 :print(f"❌ {len(notsucessed)} Failed to decrypt...\n")
         report("0",sucessed,notsucessed)
-        print("Would you like to see the report now? Y / N:")
-        while True:
-            if keyboard.is_pressed('n'): break
-            if keyboard.is_pressed('y'): 
-                if len(sucessed)>0:
-                    print("***Decrypted list\n")
-                    for r in sucessed:
-                        print(f"--File: {r['Filename']}    --CheckSum:",end="")
-                        if r["integrity"]=='True': 
-                            print("✅")
-                        elif r["integrity"]=='False':
-                            print("⛔")
-                if len(notsucessed)>0:
-                    print("***Failed to decrypt\n")
-                    for r in notsucessed:
-                        print(f"--File: {r['Filename']}  --Reason:{r['error']}")          
-                exit("Done!")
-        exit("Done!") 
+        exit("Done!")
+         
     else:
          print("\n|NO DECRYPTION DONE...😱\n")
-         print(f"❌ {len(notsucessed)} Failed to decrypt...\n")
+         print("|Result List:\n")
+         for r in notsucessed:
+                    print(f"❌--File: {r['Filename']}  --Reason:{r['error']}")     
          report("0",sucessed,notsucessed)
          exit("Done!") 
 
