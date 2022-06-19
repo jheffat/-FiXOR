@@ -1,14 +1,8 @@
 # FiXOR 
 
-> Is a file encryptor based on command line interface CLI. It is available in binary for Windows and customized script for MacOSX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7, so you should have that version or higher....For Windows users I recommend to install **Windows Terminal** from Microsoft store, it supports UNICODE.
+> Is a file encryptor based on command line interface CLI. It is available for Windows, MacOSX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7, so you should have that version or higher....For Windows users I recommend to install **Windows Terminal** from Microsoft store, it supports UNICODE.
 
 **For Binary download go to** [http://icodexys.com](http://icodexys.com/)
-
-> Fixor 2.11 has new improvements, one of them is:
->
-> - Passwords are no longer encrypted and stored for security reasons, only uses advanced Password hashing algorithm.
-> - It also contains the verification of data integrity using the sha256 hash algorithm, with it we can ensure that the file has been successfully decrypted or not.
-> - You can make the encryption or decryption process even faster.
 
 **NOTE**: *FIXOR 1.0 no longer supported but still here for python learners.*
 
@@ -34,16 +28,6 @@
 >   fixor -d *.* -p G0dl!k334#
 >   ```
 >
->   * Linux/MacOSX  platform:
->
->     -->The wildcards or target must have " " or ' '. Needs to be root user or use SUDO
->
->   ```bash
->   sudo fixor -e "*.exe"
->   sudo fixor -e "mydiary.txt"
->   sudo fixor -d "*.*" -p G0dl!k334#
->   ```
->
 >   
 
 > * In Scripting mode:
@@ -54,17 +38,6 @@
 >   python fixor.py -e mydiary.txt
 >   python fixor.py -d *.* -p G0dl!k334#
 >   ```
->   
->   * Linux/MacOSX platform:					
->   
->   ```bash
->   sudo python fixor.py -e  "*.exe"
->   sudo python fixor.py -e  "mydiary.txt"
->   sudo python fixor.py -d  "*.*" -p G0dl!k334#
->   ```
->   
->   
->
 > 
 
 ## -----Screenshots
