@@ -2,7 +2,7 @@
 
 > Is a file encryptor based on command line interface CLI. It is available for Windows, MacOSX and Linux. It can also be used as a script for any platform(for efficient operation, make sure you have python installed and the modules listed in requirements.txt here: [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt). Fixor was developed with python 3.8.7, so you should have that version or higher....For Windows users I recommend to install **Windows Terminal** from Microsoft store, it supports UNICODE.
 
-**For Binary download go to** [http://icodexys.com](http://icodexys.com/)
+**For executable download go to** [http://icodexys.com](http://icodexys.com/)
 
 **NOTE**: *FIXOR 1.0 no longer supported but still here for python learners.*
 
@@ -20,9 +20,7 @@
 >
 > - In binary mode:
 >
->   - Windows platform:		
->
->   ```powershell
+>   ```
 >   fixor -e *.exe
 >   fixor -e mydiary.txt
 >   fixor -d *.* -p G0dl!k334#
@@ -31,8 +29,7 @@
 >   
 
 > * In Scripting mode:
->   * Windows platform:
->
+>  
 >   ```powershell
 >   python fixor.py -e *.exe
 >   python fixor.py -e mydiary.txt
