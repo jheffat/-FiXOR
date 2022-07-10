@@ -26,15 +26,15 @@
 >   fixor -d *.* -p G0dl!k334#
 >   ```
 >
-> * In Scripting mode:
+> - In Scripting mode:
 >  
->  * >>>>Windows
+> **Windows**
 >   ```powershell
 >   python fixor.py -e *.exe
 >   python fixor.py -e mydiary.txt
 >   python fixor.py -d *.* -p G0dl!k334#
 >   ```
->* >>>>Linux/MacOSX
+> **Linux/MacOSX**
 >   ```powershell
 >   python fixor.py -e "*.exe"
 >   python fixor.py -e "mydiary.txt"
