@@ -26,31 +26,34 @@
 >   fixor -d *.* -p G0dl!k334#
 >   ```
 >
->   
-
 > * In Scripting mode:
 >  
+>  * >>>>Windows
 >   ```powershell
 >   python fixor.py -e *.exe
 >   python fixor.py -e mydiary.txt
 >   python fixor.py -d *.* -p G0dl!k334#
 >   ```
-> 
+>* >>>>Linux/MacOSX
+>   ```powershell
+>   python fixor.py -e "*.exe"
+>   python fixor.py -e "mydiary.txt"
+>   python fixor.py -d "*.*" -p G0dl!k334#
+>   ```
 
-## -----Screenshots
+## -----IN ACTION
 
 #### *encryption*
 
-`Ex: fixor -e *.mp3 -p D0y0ul0v3m3?` [![encrypt](https://user-images.githubusercontent.com/18588201/127971916-15df22f8-7d7f-47e2-85d3-d3f7a126dcb9.jpg)](https://user-images.githubusercontent.com/18588201/127971916-15df22f8-7d7f-47e2-85d3-d3f7a126dcb9.jpg)
+https://user-images.githubusercontent.com/18588201/178131667-2c39deb0-dfa5-41b4-b7c5-0d602b758b1c.mp4
+
 
 #### *scanning files encrypted*
 
-`Ex: fixor -s *.mp3` [![scanned](https://user-images.githubusercontent.com/18588201/127971964-467490ac-1ce1-454e-bfa1-6d9d504bbc75.jpg)](https://user-images.githubusercontent.com/18588201/127971964-467490ac-1ce1-454e-bfa1-6d9d504bbc75.jpg)
+https://user-images.githubusercontent.com/18588201/178131811-15ff836a-5878-447d-9ffe-b65a5810c93b.mp4
 
-#### *List of files encrypted to be decrypted*
 
-`Ex: fixor -d *.mp3 -p D0y0ul0v3m3?` [![tarlisttodecry](https://user-images.githubusercontent.com/18588201/127972065-6f2f6958-fb1e-4430-bb18-1c8bd977184d.jpg)](https://user-images.githubusercontent.com/18588201/127972065-6f2f6958-fb1e-4430-bb18-1c8bd977184d.jpg)
+#### *during the decryption* 
 
-#### *during the decryption* [![decryp](https://user-images.githubusercontent.com/18588201/127972115-140c8f99-3f15-4fb5-a189-3510596bfe32.jpg)](https://user-images.githubusercontent.com/18588201/127972115-140c8f99-3f15-4fb5-a189-3510596bfe32.jpg)
+https://user-images.githubusercontent.com/18588201/178131826-ec91ff2a-a114-4a42-bd84-3f9a0a5f1447.mp4
 
-#### *results with Checksum verified* [![resultdecryp](https://user-images.githubusercontent.com/18588201/127972248-e02b6add-b43e-4579-ac35-7d5cd28028f1.jpg)](https://user-images.githubusercontent.com/18588201/127972248-e02b6add-b43e-4579-ac35-7d5cd28028f1.jpg)
