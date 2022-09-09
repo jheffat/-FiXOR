@@ -1,5 +1,5 @@
 # FiXOR 
->is a file encryptor based on Command Line interface, it can be executed as a script to be used in Windows and Linux/MacosX (requires privileged user). To accomplish that task you need to install certain modules listed in [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt) and install python 3.8.9 or earlier. It is also available as a standalone executable for windows, Linux and MacOSX at [http://icodexys.com](http://icodexys.com/) . As soon as the file is encrypted, a metadata is stored inside the file, in which it contains original information such as size, name, date, and hashed password (difficult to apply brute force). Its execution must be with parameters listed below:
+>is a file encryptor based on Command Line interface, it can be executed as a script to be used in Windows and Linux/MacosX (requires privileged user). To accomplish that task you need to install certain modules listed in [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt) and install python 3.8.9 or earlier. It is also available as a standalone executable for windows at [http://icodexys.com](http://icodexys.com/) . As soon as the file is encrypted, a metadata is stored inside the file, in which it contains original information such as size, name, date, and hashed password (difficult to apply brute force). Its execution must be with parameters listed below:
 
 ## ------USAGE:
 
@@ -36,7 +36,7 @@
 >      python fixor.py -d "*.*" -p G0dl!k334#
 >   ```
 
-**NOTE**: *FIXOR 1.0  I keep it here since is my first program made in python*
+**NOTE**: *FIXOR 1.0  I keep it here since is my firstversion made in python*
 
 ## -----IN ACTION
 
