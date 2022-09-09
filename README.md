@@ -13,7 +13,7 @@
 >
 > ### Example:
 >
-> - In binary mode:
+> - In Executable mode:
 >
 >   ```
 >   fixor -e *.exe
