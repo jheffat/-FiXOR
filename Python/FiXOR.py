@@ -336,10 +336,8 @@ Terminated...""")
 
             for b in fragdata:
                 bar.update(1)
-                encryptdata+=bytes([(b^int(256-ord(Password[n])))])
-                n+=1   
-                if(n == lp):
-                    n=0;
+                encryptdata+=bytes([(b^int(256-ord(Password[n%lp])))])
+              
             bar.close() 
                
             FTarget=open(Filename,"rb+")
@@ -477,10 +475,8 @@ Terminated...""")
                 n=0
                 for b in fragdata:
                     bar.update(1)
-                    decryptdata+=bytes([(b^int(256-ord(Password[n])))])
-                    n+=1
-                    if(n == lp):
-                        n=0;          
+                    decryptdata+=bytes([(b^int(256-ord(Password[n%lp])))])
+         
                 bar.close()
                 print("\n| Checking File's Integrity.....",end="")
                 integrity=sha256(decryptdata).hexdigest()== F_hashed
