@@ -47,7 +47,7 @@ As soon as the file is encrypted, a metadata is stored inside the file, in which
 https://user-images.githubusercontent.com/18588201/178131667-2c39deb0-dfa5-41b4-b7c5-0d602b758b1c.mp4
 
 
-#### *scanning files encrypted*
+#### *scanning  encrypted files*
 
 https://user-images.githubusercontent.com/18588201/178131811-15ff836a-5878-447d-9ffe-b65a5810c93b.mp4
 
