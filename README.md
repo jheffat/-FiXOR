@@ -1,4 +1,7 @@
 # FiXOR 
+
+![Screenshot (5)](https://user-images.githubusercontent.com/18588201/208356258-1c7a7002-d7d1-45df-b8ad-96419743b9b6.png)
+
 >is a file encryptor based on Command Line interface, it can be executed as a script to be used in Windows and Linux/MacosX (requires privileged user). To accomplish that task you need to install certain modules listed in [requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt) and install python 3.8.9 or earlier. FiXOR project is also written in C# (Still in Development).... Is also available as a standalone executable for windows at [http://icodexys.com](http://icodexys.com/) .
 
 As soon as the file is encrypted, a metadata is stored inside the file, in which it contains original information such as size, name, date, and hashed password (difficult to apply brute force). Its execution must be with parameters listed below:
