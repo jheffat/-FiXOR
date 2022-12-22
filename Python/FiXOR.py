@@ -92,15 +92,8 @@ def ValidPass(Passwd):
                     if  re.search("[@#$!%&]",Passwd):
                         return True
     return False
-def inter(msg):
-    N_msg=len(msg);nm=[""]*(N_msg+1)
-    for y in range(N_msg):
-        if y%2==0:
-            nm[y+1]=msg[y]
-        if y%2==1:
-            nm[y-1]=msg[y]          
-    nm.remove("")
-    return "".join(nm)
+def hashme(msg):
+    return sha256(msg.encode("utf-8")).hexdigest()
 
 def Filehandle(Filename,p,b):
     rf=open(Filename,"rb")
@@ -141,7 +134,7 @@ def intro():
   ______ ___   ______  _____        🌍: www.icodexys.com
  |  ____(_) \ / / __ \|  __ \       📧: iCodexys@gmail.com
  | |__   _ \ V / |  | | |__) |      🔨: Jheff Alberty
- |  __| | | > <| |  | |  _  /       📊: 2.50  (06/18/2022) 
+ |  __| | | > <| |  | |  _  /       📊: 2.55  (06/18/2022) 
  | |    | |/ . \ |__| | | \ \ 
  |_|    |_/_/ \_\____/|_|  \_\      GNU General Public License v3.0
  """ )                                                     
@@ -173,7 +166,7 @@ def warning():
     key_p=0
     while True:
             if keyboard.is_pressed('enter'): break
-            if keyboard.is_pressed('P') and key_p==0: print("--->Your Password:"+inter(Password));key_p=1    
+            if keyboard.is_pressed('P') and key_p==0: print("--->Your Password:"+Original_Password);key_p=1    
             if keyboard.is_pressed('esc'): exit("Canceled...") 
 
 def helpscr():
@@ -288,7 +281,8 @@ Terminated...""")
             while True:
                 if keyboard.is_pressed('enter'): break
                 if keyboard.is_pressed('esc'): exit("Canceled...") 
-    Password=inter(Password)
+    Original_Password=Password
+    Password=hashme(Password)
     lp=len(Password)
     Salt=gensalt(16).hex()
     Pass_hashed=Salt+passhash(Password.encode() ,Salt.encode(),100,32).hex()
@@ -337,7 +331,7 @@ Terminated...""")
             for b in fragdata:
                 bar.update(1)
                 encryptdata+=bytes([(b^int(256-ord(Password[n%lp])))])
-              
+                n+=1
             bar.close() 
                
             FTarget=open(Filename,"rb+")
@@ -446,7 +440,7 @@ Terminated...""")
             while True:
                 if keyboard.is_pressed('enter'): break
                 if keyboard.is_pressed('esc'): exit("Canceled...")
-    Password=inter(Password)
+    Password=hashme(Password)
     lp=len(Password)
     lentarg=len(targets)
     timeprocess=datetime.now().strftime("%H:%M:%S")
@@ -476,7 +470,7 @@ Terminated...""")
                 for b in fragdata:
                     bar.update(1)
                     decryptdata+=bytes([(b^int(256-ord(Password[n%lp])))])
-         
+                    n+=1
                 bar.close()
                 print("\n| Checking File's Integrity.....",end="")
                 integrity=sha256(decryptdata).hexdigest()== F_hashed
@@ -562,4 +556,4 @@ Terminated...""")
          report("0",sucessed,notsucessed)
          exit("Done!") 
 
-#Developed by Jheff Mat(iCODEXYS) 8/3/2021
+#Developed by Jheff Mat(iCODEXYS) 12/22/2022
