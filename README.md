@@ -2,7 +2,7 @@
 
 ![Screenshot (5)](https://user-images.githubusercontent.com/18588201/208356258-1c7a7002-d7d1-45df-b8ad-96419743b9b6.png)
 
->It is a tool written in python to encrypt any type of files using complex XOR algorithm with a strong key including a built-in BCrypt hash. You can use it as an executable([http://icodexys.com](http://icodexys.com/)) or as script([requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt)), it is based on the command line platform. 
+>It is a tool written in python to encrypt any type of files using complex XOR algorithm with a strong key and a built-in BCrypt hash. You can use it as an executable([http://icodexys.com](http://icodexys.com/)) or as script([requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt)), it is based on the command line platform. 
 
 As soon as the file is encrypted, metadata is stored inside the file. The metadata contains original information such as the size, name, date, password etc... Its execution must be with the parameters detailed below:
 
