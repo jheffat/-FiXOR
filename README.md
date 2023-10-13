@@ -2,7 +2,7 @@
 
 ![Screenshot (5)](https://user-images.githubusercontent.com/18588201/208356258-1c7a7002-d7d1-45df-b8ad-96419743b9b6.png)
 
->It is a tool written in python to encrypt any type of files using complex XOR algorithm with a password(BCrypt hashed). You can use it as an executable([http://icodexys.com](http://icodexys.com/)) or as script([requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt)), it is based on the command line platform. 
+>It is a script written in Python that encrypts any type of file. It comes integrated with one of the classic methods using XOR and the most recent addition AES-128, which is more secure and recommended. This method was added in the recent version 3.00. Name FiXOR has been replaced by PyXOR to give reference to the Python language where it was originally written. You can use it as an executable([http://icodexys.com](http://icodexys.com/)) or as script([requirements.txt](https://github.com/icodexys/FiXOR-project/files/6921962/requirements.txt)). 
 
 As soon as the file is encrypted, metadata is stored inside the file. The metadata contains original information such as the size, name, date, password(hashed by BCrypt) etc... Its execution must be with the parameters detailed below:
 
@@ -41,7 +41,8 @@ As soon as the file is encrypted, metadata is stored inside the file. The metada
 >      python fixor.py -d "*.*" -p G0dl!k334#
 >   ```
 
-**NOTE**: *FIXOR 1.0  I keep it here since is my firstversion made in python*
+**NOTE**: *FIXOR 1.0  I'll keep it here since is my first version made in python*
+**NOTE 2**: *FIXOR 2.50  Discontinued since new innovation has made and the name changed to PyXOR, source code still available.*
 
 ## -----IN ACTION
 
