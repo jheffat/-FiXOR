@@ -42,7 +42,8 @@ When the file is encrypted, metadata is stored inside the file. The metadata con
 >   ```
 
 **NOTE**: *FIXOR 1.0  I'll keep it here since is my first version made in python*
-**NOTE 2**: *FIXOR 2.50  Discontinued since new innovation has made and the name changed to PyXOR, source code still available.*
+
+**NOTE 2**: *FIXOR 2.50  Discontinued since new innovation has made and the name changed to FiAES, source code still available.*
 
 ## -----IN ACTION
 
