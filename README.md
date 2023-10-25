@@ -4,7 +4,7 @@
 
 >It is a script written in Python that encrypts any type of file. The new version comes with a more sophisticated AES-128 encryption, which is one reason the name "FiXOR" changed to "FiAES". The previous version 2.50 only worked with a simple XOR encryption, in the new version you can choose to encrypt a file with AES or XOR. Executable Download([http://icodexys.com](http://icodexys.com/)).
 
-When the file is encrypted, metadata is stored inside the file. The metadata contains original information such as the size, name, date, password(hashed by BCrypt) etc... Its execution must be with the parameters detailed below:
+When the file is encrypted, metadata is stored inside the file. The metadata contains original information such as the size, name, date, password(hashed by BCrypt) etc... Parameters detailed below:
 
 ## ------USAGE:
 
@@ -21,24 +21,24 @@ When the file is encrypted, metadata is stored inside the file. The metadata con
 > - In Executable mode:
 >
 >   ```
->   fixor -e *.exe
->   fixor -e mydiary.txt
->   fixor -d *.* -p G0dl!k334#
+>   fiaes -e *.exe
+>   fiaes -e mydiary.txt
+>   fiaes -d *.* -p G0dl!k334#
 >   ```
 >
 > - In Scripting mode:
 >  
 >    **Windows**
 >   ```powershell
->      python fixor.py -e *.exe
->      python fixor.py -e mydiary.txt
->      python fixor.py -d *.* -p G0dl!k334#
+>      python fiaes.py -e *.exe
+>      python fiaes.py -e mydiary.txt
+>      python fiaes.py -d *.* -p G0dl!k334#
 >   ```
 >    **Linux/MacOSX**
 >   ```powershell
->      python fixor.py -e "*.exe"
->      python fixor.py -e "mydiary.txt"
->      python fixor.py -d "*.*" -p G0dl!k334#
+>      python fiaes.py -e "*.exe"
+>      python fiaes.py -e "mydiary.txt"
+>      python fiaes.py -d "*.*" -p G0dl!k334#
 >   ```
 
 **NOTE**: *FIXOR 1.0  I'll keep it here since is my first version made in python*
