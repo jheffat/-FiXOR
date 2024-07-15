@@ -21,24 +21,24 @@ When the file is encrypted, metadata is stored inside the file. The metadata con
 > - In Executable mode:
 >
 >   ```
->   fiaes -e *.exe
->   fiaes -e mydiary.txt
->   fiaes -d *.* -p G0dl!k334#
+>   fixor -e *.exe
+>   fixor -e mydiary.txt
+>   fixor -d *.* -p G0dl!k334#
 >   ```
 >
 > - In Scripting mode:
 >  
 >    **Windows**
 >   ```powershell
->      python fiaes.py -e *.exe
->      python fiaes.py -e mydiary.txt
->      python fiaes.py -d *.* -p G0dl!k334#
+>      python fixor.py -e *.exe
+>      python fixor.py -e mydiary.txt
+>      python fixor.py -d *.* -p G0dl!k334#
 >   ```
 >    **Linux/MacOSX**
 >   ```powershell
->      python fiaes.py -e "*.exe"
->      python fiaes.py -e "mydiary.txt"
->      python fiaes.py -d "*.*" -p G0dl!k334#
+>      python fixor.py -e "*.exe"
+>      python fixor.py -e "mydiary.txt"
+>      python fixor.py -d "*.*" -p G0dl!k334#
 >   ```
 
 **NOTE**: *FIXOR 1.0  I'll keep it here since is my first version made in python*
