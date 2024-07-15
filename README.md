@@ -1,8 +1,8 @@
-# FiXOR (Changed to FiAES)
+# FiXOR 
 
 ![Screenshot (5)](https://user-images.githubusercontent.com/18588201/208356258-1c7a7002-d7d1-45df-b8ad-96419743b9b6.png)
 
->It is a script written in Python that encrypts any type of file. The new version comes with a more sophisticated AES-128 encryption, which is one reason the name "FiXOR" changed to "FiAES". The previous version 2.50 only worked with a simple XOR encryption, in the new version you can choose to encrypt a file with AES or XOR. Executable Download([http://icodexys.com](http://icodexys.com/)).
+>It is a script written in Python that encrypts any type of file. The new version comes with a more sophisticated AES-128 encryption. The previous version 2.50 only worked with a simple XOR encryption, in the new version you can choose to encrypt a file with AES or XOR. Executable Download([http://icodexys.com](http://icodexys.com/)).
 
 When the file is encrypted, metadata is stored inside the file. The metadata contains original information such as the size, name, date, password(hashed by BCrypt) etc... Parameters detailed below:
 
@@ -43,7 +43,7 @@ When the file is encrypted, metadata is stored inside the file. The metadata con
 
 **NOTE**: *FIXOR 1.0  I'll keep it here since is my first version made in python*
 
-**NOTE 2**: *FIXOR 2.50  Discontinued since new innovation has made and the name changed to FiAES, source code still available.*
+**NOTE 2**: *FIXOR 2.50  Discontinued since new innovation has made but source code still available.*
 
 ## -----IN ACTION
 
