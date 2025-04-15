@@ -1,4 +1,4 @@
-# FiXOR (discontinued, name changed to DPJ([DPJ](https://github.com/jheffat/-DPJ/tree/main)
+# FiXOR (discontinued, name changed to [DPJ](https://github.com/jheffat/-DPJ/tree/main)
 
 ```text
 #       /$$ /$$                                           /$$     /$$                                     /$$
